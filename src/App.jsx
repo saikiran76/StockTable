@@ -1,10 +1,13 @@
 import './App.css'
+import Header from './components/Header'
+import News from './components/News'
 
 function App() {
  
   return (
     <>
-    <h1 className='mx-6 my-6 font-bold text-2xl font-sans'>Stocks</h1>
+    <Header/>
+    <News/>
   
     </>
   )
