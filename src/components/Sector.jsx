@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { transformPercentageToFloat } from "../utils/Helper";
+import { API_KEY_FMP } from "../utils/constants";
 
 const Sector = ({ color = "bg-[#1E2D2D]" }) => {
     const [sum, setSum] = useState(0);
     const [sectors, setSectors] = useState([]);
 
     const fetchSectors = async () => {
-        const response = await fetch("https://financialmodelingprep.com/api/v3/sectors-performance?apikey=EyTC3kEuxElOeJsgxw3FRXnQjjpBZNhM");
+        const response = await fetch(`https://financialmodelingprep.com/api/v3/sectors-performance?apikey=${API_KEY_FMP}`);
         const data = await response.json();
         console.log(data);
         setSectors(data);

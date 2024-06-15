@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 import axios from 'axios';
+import { API_KEY_VANTAGE } from '../utils/constants';
 
 const Chart = () => {
   const [data, setData] = useState({});
@@ -10,8 +11,7 @@ const Chart = () => {
 
   const fetchData = async (symbol, interval, outputsize = 'compact') => {
     try {
-      const API_KEY = 'ACH0E700Q19S4LT4';
-      const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_${interval}&symbol=${symbol}&outputsize=${outputsize}&apikey=${API_KEY}`;
+      const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_${interval}&symbol=${symbol}&outputsize=${outputsize}&apikey=${API_KEY_VANTAGE}`;
       const response = await axios.get(URL);
       const data = response.data;
       let timeSeriesKey = Object.keys(data).find(key => key.includes('Time Series'));
