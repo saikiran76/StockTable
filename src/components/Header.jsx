@@ -11,7 +11,7 @@ const Header = ({ userName = "Jane" }) => {
   const formatedDate = formatDate(today)
 
   return (
-    <header className=" p-[4rem] bg-zinc-900 text-white font-poppin">
+    <header className=" p-[4rem] text-white font-poppin">
         <div className='border-gray-600 border-b flex justify-between items-center pb-6'>
             <div>
                 <h1 className="text-xl font-bold flex items-center gap-2">Hello, {userName} <RiVipFill style={{color:"blue"}}/></h1>

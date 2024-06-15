@@ -3,7 +3,7 @@ import { MdOutlineArrowOutward } from "react-icons/md";
 
 const News = ()=>{
     return(
-        <div className="rounded-md bg-black text-white p-8 m-4 ml-16 w-[40%] font-poppin">
+        <div className="rounded-md bg-[#050F0F] text-white p-8 m-4 ml-16 font-poppin">
             <div className="flex gap-2">
                 <Button name={<p>The markets are <span style={{color:"green"}}>bullish</span></p>} icon={<span className="hidden"/>} p="p-[0.5em]"/>
                 <Button icon={<MdOutlineArrowOutward/>}/>
