@@ -2,10 +2,15 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { API_KEY_FMP } from "../utils/constants";
 import { transformPercentageToFloat } from "../utils/Helper";
+import { useDispatch } from "react-redux";
+import { changeSymbol } from "../utils/stockSlice";
 
 const Overview = () => {
     const [markets, setMarkets] = useState([]);
     const [error, setError] = useState(null);
+
+    const dispatch = useDispatch();
+    // const symbol = 
 
     const fetchMarketData = async () => {
         try {
@@ -29,6 +34,7 @@ const Overview = () => {
 
             const stocks = stocksResponse.data.map((stock, i) => ({
                 id: i + 1,
+                symbol:stock.symbol,
                 name: stock.name,
                 currentValue: stock.price,
                 dailyChange: `${stock.change.toFixed(2)}`,
@@ -37,6 +43,7 @@ const Overview = () => {
 
             const assets = assetsResponse.data.map((asset, i) => ({
                 id: stocks.length + i + 1,
+                symbol: asset.symbol,
                 name: asset.name,
                 currentValue: asset.price,
                 dailyChange: `${asset.change.toFixed(2)}`,
@@ -75,11 +82,11 @@ const Overview = () => {
                     <div
                         className="p-3 grid grid-cols-3 gap-[2rem] items-center text-xs hover:bg-[#19191E] rounded-md duration-200"
                         key={item.id}
+                        onClick={()=>dispatch(changeSymbol(item.symbol))}
                     >
                         <p className="font-semibold">{item.name}</p>
                         <div className="grid grid-cols-3 items-center float-right w-[210%] ml-[5em]">
                             <p className="font-base text-[0.6rem] w-fit">{item.currentValue}</p>
-                            {/* {parseFloat(item.dailyChange) < 0 ? col = "text-red-400": col} */}
                             <p className={`font-base text-[0.6rem] ${getChangeColor(item.dailyChange)}`}>{item.dailyChange}</p>
                             <p className={`font-base text-[0.6rem] ${getBackgroud(item.percentageChange)} max-w-fit p-1 rounded ${percentColor(item.percentageChange)}`}>{item.percentageChange}</p>
                         </div>
