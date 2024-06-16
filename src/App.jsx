@@ -15,7 +15,7 @@ function App() {
         <Header/>
         <div className='flex w-[100%]'>
           <div className='w-[44.5%]'><News/></div>
-          <div className='w-[53%]'><Sector color="bg-[#1E2D2D]" /></div>
+          {/* <div className='w-[53%]'><Sector color="bg-[#1E2D2D]" /></div> */}
         
         </div>
         {/* <div className='w-[55%]'><Chart/></div> */}
