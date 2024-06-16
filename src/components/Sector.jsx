@@ -33,7 +33,7 @@ const Sector = ({ color = "bg-[#1E2D2D]" }) => {
                         const changePercentage = transformPercentageToFloat(sec.changesPercentage);
                         const sectorColor = changePercentage < 0 ? "bg-gradient-to-r from-neutral-200 to-red-300" : color;
                         return (
-                            <div className="flex gap-1 justify-between p-2 bg-[#27272A] rounded" key={index}>
+                            <div className="flex gap-1 justify-between p-2 bg-[#27272A] rounded hover:bg-gray-500 duration-200" key={index}>
                                 <p className="text-xs text-white">{sec.sector}</p>
                                 <p className={`text-xs ${sectorColor==="bg-gradient-to-r from-neutral-200 to-red-300"?"text-red-500":"text-green-400"} ${sectorColor} p-1 rounded`}>{changePercentage<0?changePercentage:"+"+changePercentage}</p>
                             </div>
