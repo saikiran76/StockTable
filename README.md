@@ -14,8 +14,8 @@
 - plotly library for charts (visit the official docs: `https://plotly.com/javascript/react/`)
 
 ## API's used for data (rate-limited for free-tier)
-- Alpha Vantage
-- Financial Modelling Prep (FMP) API
+- Alpha Vantage (visit the official docs: `https://www.alphavantage.co/documentation/`)
+- Financial Modelling Prep (FMP) API (visit the official docs: `https://site.financialmodelingprep.com/developer/docs`)
 
 ## Features
 - Realtime market analysis using dashboard which comes with
