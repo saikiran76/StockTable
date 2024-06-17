@@ -5,6 +5,7 @@ import { API_KEY_VANTAGE } from '../utils/constants';
 import { MdChevronRight } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import { Loader } from './Loader';
+import { useMediaQuery } from 'react-responsive';
 
 const ScatterPlot = () => {
   const [data, setData] = useState({});
@@ -68,6 +69,15 @@ const ScatterPlot = () => {
   const dates = data ? Object.keys(data) : [];
   const closingPrices = dates.map(date => parseFloat(data[date]['4. close'] || 0));
 
+  const isLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1224px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+
+  const chartDimensions = {
+    width: isLaptop ? 400 : isTablet ? 350 : 296,
+    height: isLaptop ? 300 : isTablet ? 275 : 250,
+  };
+
   return (
     <div className="rounded-md bg-[#0F0F14] text-white p-4 m-4 font-poppin">
       <h1 className="mt-[1em] ml-1 text-gray-600 flex gap-2 items-center">
@@ -85,8 +95,8 @@ const ScatterPlot = () => {
           },
         ]}
         layout={{
-          width: 296,
-          height: 250,
+          width: chartDimensions.width,
+          height: chartDimensions.height,
           paper_bgcolor: '#0F0F14',
           plot_bgcolor: '#0F0F14',
           xaxis: {
