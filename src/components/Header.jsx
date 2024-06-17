@@ -17,7 +17,7 @@ const Header = () => {
     }
   }, []);
   
-  const today = new Date().toLocaleDateString();
+  const today = new Date();
   const formatedDate = formatDate(today);
 
   return (

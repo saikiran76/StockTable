@@ -1,8 +1,8 @@
-export function formatDate(dateString) {
-    const date = new Date(dateString);
+export function formatDate(date) {
     const options = { weekday: 'long', month: 'long', day: 'numeric' };
     return date.toLocaleDateString('en-US', options);
 }
+
 
 export function transformPercentageToFloat(percentageString) {
     let numberString = percentageString.replace('%', '');
