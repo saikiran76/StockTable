@@ -6,32 +6,31 @@ import { MdChevronRight } from "react-icons/md";
 import { useSelector } from 'react-redux';
 import { Loader } from './Loader';
 
-const Chart = () => {
+const ScatterPlot = () => {
   const [data, setData] = useState({});
   const [timeRange, setTimeRange] = useState('1D');
-  // const [symbol, setSymbol] = useState('SPY');
   const [loading, setLoading] = useState(true);
 
-  const {symbol} = useSelector((state)=>state.stock)
+  const { symbol } = useSelector((state) => state.stock);
 
   const fetchData = async (symbol, interval, outputsize = 'compact') => {
-    setLoading(true);
     try {
-      const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_${interval}&symbol=${symbol}&outputsize=${outputsize}&apikey=${API_KEY_VANTAGE}`;
-      const response = await axios.get(URL);
-      const data = response.data;
-      let timeSeriesKey = Object.keys(data).find(key => key.includes('Time Series'));
+        setLoading(true);
+        const URL = `https://www.alphavantage.co/query?function=TIME_SERIES_${interval}&symbol=${symbol}&outputsize=${outputsize}&apikey=${API_KEY_VANTAGE}`;
+        const response = await axios.get(URL);
+        const data = response.data;
+        let timeSeriesKey = Object.keys(data).find(key => key.includes('Time Series'));
 
-      if (!timeSeriesKey) {
-        throw new Error('Invalid response from API');
-      }
+        if (!timeSeriesKey) {
+            throw new Error('Invalid response from API');
+        }
 
-      setData(data[timeSeriesKey]);
-    } catch (e) {
-      console.error(e);
-    } finally{
-      setLoading(false);
-    }
+        setData(data[timeSeriesKey]);
+        } catch (e) {
+        console.error(e);
+        } finally{
+            setLoading(false);
+        }
   };
 
   useEffect(() => {
@@ -72,7 +71,7 @@ const Chart = () => {
   return (
     <div className="rounded-md bg-[#0F0F14] text-white p-4 m-4 font-poppin">
       <h1 className="mt-[1em] ml-1 text-gray-600 flex gap-2 items-center">
-        {`${symbol} (${timeRange})`}<MdChevronRight style={{color:"white"}} />
+        {`${symbol} (${timeRange})`}<MdChevronRight style={{ color: "white" }} />
       </h1>
       {loading ? <div className='mx-auto mt-[6em]'><Loader/></div> :
       <Plot
@@ -81,17 +80,13 @@ const Chart = () => {
             x: dates,
             y: closingPrices,
             type: 'scatter',
-            mode: 'lines',
-            line: { color: '#1f77b4' },
+            mode: 'markers',
+            marker: { color: '#1f77b4' },
           },
         ]}
         layout={{
           width: 476,
           height: 300,
-          // title: {
-          //   text: `Stock Market Prices - ${symbol} (${timeRange})`,
-          //   font: { color: 'white' },
-          // },
           paper_bgcolor: '#0F0F14',
           plot_bgcolor: '#0F0F14',
           xaxis: {
@@ -114,7 +109,7 @@ const Chart = () => {
         }}
         config={{ displayModeBar: false }}
       />
-      }
+        }
       <div className="flex space-x-2 mb-4">
         {['1D', '1W', '1M', '3M', '1Y', 'All'].map(range => (
           <button
@@ -130,4 +125,4 @@ const Chart = () => {
   );
 };
 
-export default Chart;
+export default ScatterPlot;
