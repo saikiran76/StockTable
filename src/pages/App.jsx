@@ -35,7 +35,7 @@ function App() {
           <Header />
           <div className="flex flex-col md:flex-row w-full flex-1 mb-4">
             <div className="w-full md:w-1/2"><News /></div>
-            <div className="w-full md:w-1/2 md:mr-5">
+            <div className="w-[110%] md:w-1/2 md:mr-5">
               <Sector color="bg-[#1E2D2D]" />
             </div>
           </div>

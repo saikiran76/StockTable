@@ -74,7 +74,7 @@ const Overview = () => {
     }, []);
 
     return (
-        <div className="bg-[#0F0F14] p-4 text-zinc-200 font-poppin">
+        <div className="bg-[#0F0F14] p-5 pr-6 md:p-4 text-zinc-200 font-poppin">
             {error ? (
                 <p>{error}</p>
             ) : (
