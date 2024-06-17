@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { auth } from "../utils/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
