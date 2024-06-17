@@ -6,12 +6,12 @@
 - Reactjs library for frontend ⚛️
 - Redux-toolkit for global state management ⚛️
 - firebase for authentication and real-time database integration 🔥🗃️
-- JavaScript
+- JavaScript 🧑‍💻
 - Vite bundler⚡
 
 ## Additional/ Secondary libraries and frameworks used
-- Tailwind CSS 💨
-- plotly library for charts
+- Tailwind CSS 💨 (visit the official docs: `https://tailwindcss.com/`)
+- plotly library for charts (visit the official docs: `https://plotly.com/javascript/react/`)
 
 ## API's used for data (rate-limited for free-tier)
 - Alpha Vantage
