@@ -31,12 +31,12 @@ function App() {
         <div className="w-1/12 md:w-1/6 lg:w-1/12 hidden md:block">
           <NavBar onUserIconClick={() => setShowProfile(true)} />
         </div>
-        <div className={`${visible ? "w-10/12" : "w-11/12"} md:w-5/6 lg:w-11/12 flex flex-col`}>
+        <div className={`${visible ? "w-[80%]" : "w-11/12"} md:w-5/6 lg:w-11/12 flex flex-col`}>
           <Header />
           <div className="flex flex-col md:flex-row w-full flex-1 mb-4">
             <div className="w-full md:w-1/2"><News /></div>
-            <div className="w-[110%] md:w-1/2 md:mr-5">
-              <Sector color="bg-[#1E2D2D]" />
+            <div className="w-[100%] md:w-1/2 md:mr-5">
+              <Sector color="bg-[#1E2D2D]" nav={visible} />
             </div>
           </div>
           <Provider store={store}>

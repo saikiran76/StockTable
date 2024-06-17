@@ -70,12 +70,12 @@ const Chart = () => {
   const closingPrices = dates.map(date => parseFloat(data[date]['4. close'] || 0));
 
   const isLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
-  const isTablet = useMediaQuery({ query: '(min-width: 768px) and (max-width: 1224px)' });
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  const isTablet = useMediaQuery({ query: '(min-width: 760px) and (max-width: 1224px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 760px)' });
 
   const chartDimensions = {
-    width: isLaptop ? 400 : isTablet ? 350 : 296,
-    height: isLaptop ? 300 : isTablet ? 275 : 250,
+    width: isLaptop ? 400 : isTablet ? 350 : 276,
+    height: isLaptop ? 300 : isTablet ? 275 : 230,
   };
 
   return (

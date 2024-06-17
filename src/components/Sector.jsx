@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { transformPercentageToFloat } from "../utils/Helper";
 import { API_KEY_FMP } from "../utils/constants";
 
-const Sector = ({ color = "bg-[#1E2D2D]" }) => {
+const Sector = ({ color = "bg-[#1E2D2D]", nav }) => {
     const [sum, setSum] = useState(0);
     const [sectors, setSectors] = useState([]);
     const [error, setError] = useState("")
@@ -42,7 +42,7 @@ const Sector = ({ color = "bg-[#1E2D2D]" }) => {
                         const changePercentage = transformPercentageToFloat(sec.changesPercentage);
                         const sectorColor = changePercentage < 0 ? "bg-[#28191E]" : color;
                         return (
-                            <div className="flex gap-[0.45rem] justify-between p-3 bg-[#27272A] rounded hover:bg-gray-500 duration-200 w-fit" key={index}>
+                            <div className={`flex flex-col md:flex-row gap-[0.45rem] justify-between p-3 bg-[#27272A] rounded hover:bg-gray-500 duration-200`} key={index}>
                                 <p className="text-[0.65rem] text-white">{sec.sector}</p>
                                 <p className={`text-xs ${sectorColor==="bg-[#28191E]"?"text-red-500":"text-green-400"} ${sectorColor} p-1 rounded`}>{changePercentage<0?changePercentage:"+"+changePercentage}</p>
                             </div>
