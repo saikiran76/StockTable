@@ -1,4 +1,6 @@
 # Financial Stocks and Market Analysis Dashboard
+# Imp Note
+- *** Since the API's are rate-limited, please open the website quite a few times else you may not see the analytics when you reach a specific limit.
 
 ## Libraries used/ Tech-stack
 - Reactjs library for frontend ⚛️
