@@ -4,8 +4,19 @@ import { AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { FaRegBookmark } from "react-icons/fa";
 import { RiVipFill } from "react-icons/ri";
+import { auth } from '../utils/firebase';
+import { useState, useEffect } from "react";
 
-const Header = ({ userName = "Jane" }) => {
+const Header = () => {
+  const [userName, setUserName] = useState("Guest");
+
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      setUserName(user.email);
+    }
+  }, []);
+  
   const today = new Date().toLocaleDateString();
   const formatedDate = formatDate(today);
 
