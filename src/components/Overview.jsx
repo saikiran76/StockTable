@@ -53,7 +53,7 @@ const Overview = () => {
             setMarkets([...stocks, ...assets]);
         } catch (error) {
             console.error("Error fetching market data:", error);
-            setError(`Failed to load market data: ${error.message}`);
+            setError(`Failed to load market data: ${error.message}, API rate-limit has been reached`);
         }
     };
 
@@ -76,7 +76,7 @@ const Overview = () => {
     return (
         <div className="bg-[#0F0F14] p-5 pr-6 md:p-4 text-zinc-200 font-poppin">
             {error ? (
-                <p>{error}</p>
+                <p className="p-2">{error}</p>
             ) : (
                 markets.map((item) => (
                     <div
