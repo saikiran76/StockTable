@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 import { Loader } from './Loader';
 import { useMediaQuery } from 'react-responsive';
 
-const Chart = () => {
+const Chart = ({nav}) => {
   const [data, setData] = useState({});
   const [timeRange, setTimeRange] = useState('1D');
   // const [symbol, setSymbol] = useState('SPY');
@@ -125,7 +125,7 @@ const Chart = () => {
           <button
             key={range}
             onClick={() => setTimeRange(range)}
-            className={`px-3 py-2 rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
+            className={`${nav ? "px-2 py-1 md:px-2 md:py-2" : "px-3 py-2"} rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
           >
             {range}
           </button>

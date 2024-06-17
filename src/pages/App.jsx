@@ -49,7 +49,7 @@ function App() {
               </div>
               <div className="flex-1 flex flex-col mr-0 md:mr-[4em] ml-4 md:ml-0">
                 <div className="flex-1 flex flex-col bg-[#0F0F14] mt-11">
-                  <Chart />
+                  <Chart nav={visible} />
                 </div>
               </div>
             </div>
@@ -58,12 +58,12 @@ function App() {
               <div className="flex-1 flex flex-col m-4 ml-2 md:ml-16">
                 {/* <p className="ml-6 md:ml-2 mb-1 md:mb-2 text-zinc-400 w-fit">Markets</p> */}
                 <div className="flex-1 flex flex-col ml-2 bg-[#0F0F14] w-full">
-                  <BarChart/>
+                  <BarChart nav={visible} />
                 </div>
               </div>
               <div className="flex-1 flex flex-col mr-0 md:mr-[4em] ml-2 md:ml-0">
                 <div className="flex-1 flex flex-col bg-[#0F0F14] mt-5 ml-2 mb-4">
-                  <ScatterPlot/>
+                  <ScatterPlot nav={visible} />
                 </div>
               </div>
             </div>
