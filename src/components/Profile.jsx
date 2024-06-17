@@ -48,9 +48,9 @@ const Profile = ({ onClose }) => {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50 font-poppin">
-      <div className="bg-white p-6 rounded-md shadow-md w-11/12 md:w-1/3">
-        <h2 className="text-2xl mb-4">User Profile</h2>
-        <p>Email: {user?.email}</p>
+      <div className="bg-[#374151] p-6 rounded-md shadow-md w-10/12 md:w-1/3">
+        <h2 className="text-2xl mb-4 text-gray-300">User Profile</h2>
+        <p className="text-gray-300">Email: {user?.email}</p>
         <input
           type="text"
           value={newPreference}
@@ -67,7 +67,7 @@ const Profile = ({ onClose }) => {
         
         <ul className="mt-4">
           {preferences.map((pref, index) => (
-            <li key={index} className="mb-2">
+            <li key={index} className="mb-2 text-gray-300">
               {pref}
             </li>
           ))}
