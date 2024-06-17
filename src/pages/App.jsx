@@ -41,8 +41,8 @@ function App() {
           </div>
           <Provider store={store}>
             <div className="flex flex-col md:flex-row flex-1">
-              <div className="flex-1 flex flex-col m-4 ml-0 md:ml-16">
-                <p className="ml-6 md:ml-2 mb-1 md:mb-2 text-zinc-400 w-fit">Markets</p>
+              <div className="flex-1 flex flex-col m-4 ml-4 md:ml-16">
+                <p className="ml-5 md:ml-2 mb-1 md:mb-2 text-zinc-400 w-fit">Markets</p>
                 <div className="flex-1 flex flex-col bg-[#0F0F14] w-full">
                   <Overview />
                 </div>
@@ -55,14 +55,14 @@ function App() {
             </div>
 
             <div className="flex flex-col md:flex-row flex-1 mt-[2em]">
-              <div className="flex-1 flex flex-col m-4 ml-0 md:ml-16">
+              <div className="flex-1 flex flex-col m-4 ml-2 md:ml-16">
                 {/* <p className="ml-6 md:ml-2 mb-1 md:mb-2 text-zinc-400 w-fit">Markets</p> */}
-                <div className="flex-1 flex flex-col bg-[#0F0F14] w-full">
+                <div className="flex-1 flex flex-col ml-2 bg-[#0F0F14] w-full">
                   <BarChart/>
                 </div>
               </div>
-              <div className="flex-1 flex flex-col mr-0 md:mr-[4em] ml-4 md:ml-0">
-                <div className="flex-1 flex flex-col bg-[#0F0F14] mt-5">
+              <div className="flex-1 flex flex-col mr-0 md:mr-[4em] ml-2 md:ml-0">
+                <div className="flex-1 flex flex-col bg-[#0F0F14] mt-5 ml-2 mb-4">
                   <ScatterPlot/>
                 </div>
               </div>
@@ -72,7 +72,7 @@ function App() {
       </div>
       {showProfile && <Profile onClose={() => setShowProfile(false)} />}
       <button
-        className="fixed top-[5em] left-4 border-gray-600 hover:bg-blue-600 duration-200 ease-linear text-white p-2 rounded-full md:hidden"
+        className="absolute top-[10.8em] left-4 border-green-400 border-2 hover:bg-blue-600 duration-200 ease-linear text-white p-2 rounded-full md:hidden"
         onClick={toggleBar}
       >
         {visible ? 'X' : 'Menu'}

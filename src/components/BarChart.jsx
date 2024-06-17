@@ -84,8 +84,8 @@ const BarChart = () => {
           },
         ]}
         layout={{
-          width: 420,
-          height: 300,
+          width: 296,
+          height: 250,
           paper_bgcolor: '#0F0F14',
           plot_bgcolor: '#0F0F14',
           xaxis: {
@@ -109,12 +109,12 @@ const BarChart = () => {
         config={{ displayModeBar: false }}
       />
       }
-      <div className="flex space-x-2 mb-4">
+      <div className="flex space-x-1 md:space-x-2  mb-4 ">
         {['1D', '1W', '1M', '3M', '1Y', 'All'].map(range => (
           <button
             key={range}
             onClick={() => setTimeRange(range)}
-            className={`px-4 py-2 rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
+            className={`px-3 py-2 rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
           >
             {range}
           </button>

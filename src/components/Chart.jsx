@@ -70,7 +70,7 @@ const Chart = () => {
   const closingPrices = dates.map(date => parseFloat(data[date]['4. close'] || 0));
 
   return (
-    <div className="rounded-md bg-[#0F0F14] text-white p-4 m-4 font-poppin">
+    <div className="rounded-md bg-[#0F0F14] text-white p-4 m-4 font-poppin ">
       <h1 className="mt-[1em] ml-1 text-gray-600 flex gap-2 items-center">
         {`${symbol} (${timeRange})`}<MdChevronRight style={{color:"white"}} />
       </h1>
@@ -86,8 +86,8 @@ const Chart = () => {
           },
         ]}
         layout={{
-          width: 476,
-          height: 300,
+          width: 296,
+          height: 250,
           // title: {
           //   text: `Stock Market Prices - ${symbol} (${timeRange})`,
           //   font: { color: 'white' },
@@ -115,12 +115,12 @@ const Chart = () => {
         config={{ displayModeBar: false }}
       />
       }
-      <div className="flex space-x-2 mb-4">
+      <div className="flex space-x-1 md:space-x-2  mb-4 ">
         {['1D', '1W', '1M', '3M', '1Y', 'All'].map(range => (
           <button
             key={range}
             onClick={() => setTimeRange(range)}
-            className={`px-4 py-2 rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
+            className={`px-3 py-2 rounded-md mt-3 ${timeRange === range ? 'bg-blue-600' : 'bg-gray-600'}`}
           >
             {range}
           </button>
