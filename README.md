@@ -48,5 +48,4 @@
 - install the required dependencies using `npm install`
 - start locally using the command `npm run dev`
 
-# Thank you 
-- This project is a part of submission
+
